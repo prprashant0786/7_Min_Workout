@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bmiActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarexer"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:theme="@style/Toolbar_theme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/purple_200" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/toolbarexer"
+        android:id="@+id/tilwt"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/purple_500"
+        app:hintTextColor="@color/purple_500"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etwt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="WEIGHT (in Kg)"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_below="@+id/tilwt"
+        android:id="@+id/tilht"
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:boxStrokeColor="@color/purple_500"
+        app:hintTextColor="@color/purple_500"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etht"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="HEIGHT (in cm)"
+            android:inputType="numberDecimal"
+            android:textSize="16sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/llDisplay"
+        android:layout_below="@id/tilht"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YOUR BMI"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/tvgetbmi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="18.00"
+            />
+        <TextView
+            android:id="@+id/tvgettype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            tools:text="OverWeight"
+            />
+        <TextView
+            android:id="@+id/tvgetdes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            tools:text="Your to good to go"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btncalcul"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llDisplay"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
+        android:text="CALCULATE"
+        android:textSize="@dimen/default_button_text" />
+
+</RelativeLayout>
